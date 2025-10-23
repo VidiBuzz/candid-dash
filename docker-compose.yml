@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # Candid Dashboard (React Admin)
+  candid-dash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: candid-dash
+    ports:
+      - "8081:80"
+    environment:
+      # API URL is baked into the build, but you can override with a reverse proxy
+      # or rebuild with different VITE_API_URL in .env
+      NODE_ENV: production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # Development mode (alternative to production build above)
+  candid-dash-dev:
+    image: node:20-alpine
+    container_name: candid-dash-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules  # Prevent overwriting node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:3000}
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    profiles:
+      - dev  # Only runs when using --profile dev
+
+# Optional: Add PostgREST if you want a complete local stack
+# Uncomment if you want to run PostgREST alongside the dashboard
+#   postgrest:
+#     image: postgrest/postgrest:latest
+#     container_name: candid-postgrest
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       PGRST_DB_URI: postgresql://postgres:password@postgres:5432/database
+#       PGRST_DB_SCHEMA: public
+#       PGRST_DB_ANON_ROLE: anon
+#     depends_on:
+#       - postgres
+#     restart: unless-stopped
+
+#   postgres:
+#     image: postgres:16-alpine
+#     container_name: candid-postgres
+#     environment:
+#       POSTGRES_DB: database
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: password
+#     volumes:
+#       - postgres-data:/var/lib/postgresql/data
+#     ports:
+#       - "5432:5432"
+#     restart: unless-stopped
+
+# volumes:
+#   postgres-data:

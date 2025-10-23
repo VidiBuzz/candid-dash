@@ -1,0 +1,29 @@
+v1.03 - Clickable External Links
+Date: 2025-10-22
+Changes:
+- Added ExternalLink component for all 6 apps
+- Clicking any app in sidebar opens the actual domain in new tab
+- Automatic redirect + manual fallback link
+- Clean URLs displayed on redirect page
+
+v1.02 - Fixed Text Visibility
+Date: 2025-10-22
+Changes:
+- Fixed white text on white background issue
+- Added explicit dark color (#333) to all list items and code blocks
+- Improved readability across all sections
+
+v1.01 - Royal Blue + 6 Apps Update
+Date: 2025-10-22
+Changes:
+- Updated to Royal Blue configuration box
+- Added 6 Candid Studios applications to sidebar
+- R2 SmartChannel, WordPress, Nextcloud, CRM, Affiliate, Voice
+- Fixed white text visibility issue
+
+v1.00 - Initial Release
+Date: 2025-10-21
+Features:
+- React Admin dashboard
+- PostgREST integration
+- Docker deployment

@@ -24,7 +24,6 @@ import {
 import {
   Menu as MenuIcon,
   Dashboard as DashboardIcon,
-  Folder as FolderIcon,
   Language as LanguageIcon,
   Cloud as CloudIcon,
   Business as BusinessIcon,
@@ -32,9 +31,9 @@ import {
   Mic as MicIcon,
   PlayCircleOutline as PlayIcon,
   Announcement as AnnouncementIcon,
-  ViewInAr as ViewInArIcon,
   QuestionAnswer as QuestionAnswerIcon,
   School as SchoolIcon,
+  PhotoCamera as PhotoCameraIcon,
 } from '@mui/icons-material';
 
 const theme = createTheme({
@@ -74,7 +73,7 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          background: 'linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%)',
+          background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #7c3aed 100%)',
           backdropFilter: 'blur(10px)',
         },
       },
@@ -96,7 +95,7 @@ const colors = [
 const apps = [
   {
     name: 'Candid SmartChannel',
-    icon: <FolderIcon />,
+    icon: <PhotoCameraIcon />,
     url: 'https://media.candidstudios.net',
     description: 'Cloudflare Workers R2 File Explorer with OIDC authentication for secure file management across 4 R2 buckets.',
     color: colors[0],
@@ -209,8 +208,8 @@ function App() {
             </Typography>
             <Grid container spacing={3}>
               {apps.map((app) => (
-                <Grid item xs={12} sm={6} md={3} key={app.name}>
-                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: app.color, color: 'white' }}>
+                <Grid item xs={12} sm={6} md={3} key={app.name} className="app-card">
+                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: `${app.color}80`, color: 'white', boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)' }}>
                     <CardContent sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
                       <Box sx={{ mr: 2, fontSize: 40, color: theme.palette.primary.main }}>
                         {React.cloneElement(app.icon, { fontSize: 'inherit' })}
@@ -332,7 +331,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, background: 'linear-gradient(135deg, #3b82f6 0%, #10b981 100%)' }}>
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #7c3aed 100%)' }}>
           <Toolbar>
             <IconButton
               color="inherit"
@@ -379,7 +378,7 @@ function App() {
         </Box>
         <Box
           component="main"
-          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - 250px)` }, background: '#1a1a1a', minHeight: '100vh' }}
+          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - 250px)` }, background: 'radial-gradient(circle at center, #1e3a8a 0%, #0f172a 50%, #1a1a2e 100%)', minHeight: '100vh' }}
         >
           <Toolbar />
           {renderContent()}

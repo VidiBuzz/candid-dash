@@ -25,10 +25,6 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy start script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-
 # Expose port 80
 EXPOSE 80
 
@@ -37,4 +33,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
 
 # Start nginx
-CMD ["/start.sh"]
+CMD ["sh", "-c", "sed -i \"s/listen 80/listen $PORT/g\" /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]

@@ -2,5 +2,5 @@
 builder = "NIXPACKS"
 
 [deploy]
-startCommand = "npm start"
+startCommand = "nginx -g 'daemon off;'"
 buildCommand = "npm run build"

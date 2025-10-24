@@ -45,8 +45,8 @@ const theme = createTheme({
       main: '#10b981', // green
     },
     background: {
-      default: '#1a1a1a', // dark gray
-      paper: 'rgba(255, 255, 255, 0.05)', // subtle glass
+      default: '#0a0f1e', // dark gray
+      paper: 'rgba(255, 255, 255, 0.03)', // subtle glass
     },
     text: {
       primary: '#ffffff',
@@ -57,15 +57,15 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderRadius: '16px',
+          background: 'rgba(255, 255, 255, 0.08)',
+          backdropFilter: 'blur(20px) saturate(180%)',
+          border: '1px solid rgba(255, 255, 255, 0.18)',
+          borderRadius: '20px',
           transition: 'all 0.3s ease-in-out',
           '&:hover': {
-            transform: 'translateY(-8px) scale(1.02)',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-            background: 'rgba(255, 255, 255, 0.15)',
+            transform: 'translateY(-12px) scale(1.03)',
+            boxShadow: '0 20px 60px 0 rgba(0, 0, 0, 0.5), 0 0 40px 0 rgba(59, 130, 246, 0.3)',
+            background: 'rgba(255, 255, 255, 0.12)',
           },
         },
       },
@@ -74,7 +74,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #7c3aed 100%)',
-          backdropFilter: 'blur(10px)',
+          backdropFilter: 'blur(20px) saturate(180%)',
         },
       },
     },
@@ -82,14 +82,14 @@ const theme = createTheme({
 });
 
 const colors = [
-  'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)', // blue
-  'linear-gradient(135deg, #10b981 0%, #059669 100%)', // green
-  'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', // yellow
-  'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)', // red
-  'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)', // purple
-  'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)', // cyan
-  'linear-gradient(135deg, #f97316 0%, #ea580c 100%)', // orange
-  'linear-gradient(135deg, #ec4899 0%, #db2777 100%)', // pink
+  'linear-gradient(135deg, rgba(59, 130, 246, 0.6) 0%, rgba(29, 78, 216, 0.4) 100%)', // blue
+  'linear-gradient(135deg, rgba(16, 185, 129, 0.6) 0%, rgba(5, 150, 105, 0.4) 100%)', // green
+  'linear-gradient(135deg, rgba(245, 158, 11, 0.6) 0%, rgba(217, 119, 6, 0.4) 100%)', // yellow
+  'linear-gradient(135deg, rgba(239, 68, 68, 0.6) 0%, rgba(220, 38, 38, 0.4) 100%)', // red
+  'linear-gradient(135deg, rgba(139, 92, 246, 0.6) 0%, rgba(124, 58, 237, 0.4) 100%)', // purple
+  'linear-gradient(135deg, rgba(6, 182, 212, 0.6) 0%, rgba(8, 145, 178, 0.4) 100%)', // cyan
+  'linear-gradient(135deg, rgba(249, 115, 22, 0.6) 0%, rgba(234, 88, 12, 0.4) 100%)', // orange
+  'linear-gradient(135deg, rgba(236, 72, 153, 0.6) 0%, rgba(219, 39, 119, 0.4) 100%)', // pink
 ];
 
 const apps = [

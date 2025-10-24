@@ -128,7 +128,7 @@ const apps = [
   {
     name: 'Cloud',
     icon: <CloudIcon />,
-    url: 'https://www.vidiblast.net',
+    url: 'https://vidiblast.net',
     description: 'Nextcloud AIO for file sharing, collaboration hub, calendar/contacts sync, and office document editing.',
     color: colors[2],
   },

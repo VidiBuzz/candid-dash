@@ -55,13 +55,20 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Source Sans Pro", "Roboto", sans-serif',
+    h5: {
+      fontSize: '1.375rem', // 22px (reduced from default ~24px)
+    },
     h6: {
       fontFamily: '"Roboto", sans-serif',
       fontWeight: 600,
+      fontSize: '1.125rem', // 18px (reduced from default ~20px)
     },
     body2: {
       fontFamily: '"Source Sans Pro", sans-serif',
-      fontSize: '12pt',
+      fontSize: '10pt',
+    },
+    body1: {
+      fontSize: '0.875rem', // 14px (reduced from default 16px)
     },
   },
   components: {
@@ -84,7 +91,7 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          background: 'linear-gradient(180deg, #1e3a8a 0%, #5ca3ff 50%, #1e3a8a 100%)',
+          background: 'linear-gradient(90deg, #1e3a8a 0%, #5ca3ff 50%, #1e3a8a 100%)',
           backdropFilter: 'blur(20px) saturate(180%)',
         },
       },
@@ -247,7 +254,7 @@ function App() {
                       </Box>
                       <Typography variant="body2" sx={{ 
                         opacity: 0.9,
-                        fontSize: '12pt',
+                        fontSize: '10pt',
                         textShadow: '0 1px 3px rgba(0,0,0,0.3)',
                         lineHeight: 1.5,
                       }}>

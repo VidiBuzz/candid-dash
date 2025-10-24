@@ -3,3 +3,6 @@ builder = "NIXPACKS"
 
 [deploy]
 buildCommand = "npm run build"
+
+[services]
+web = { command = "npm start" }

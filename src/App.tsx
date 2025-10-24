@@ -84,7 +84,7 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #7c3aed 100%)',
+          background: 'linear-gradient(180deg, #1e3a8a 0%, #5ca3ff 50%, #1e3a8a 100%)',
           backdropFilter: 'blur(20px) saturate(180%)',
         },
       },
@@ -393,8 +393,12 @@ function App() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              Candid Studios Main Menu
+            <Typography variant="h6" noWrap component="div" sx={{ 
+              fontFamily: '"Kumbh Sans", sans-serif',
+              fontWeight: 600,
+              letterSpacing: '0.5px',
+            }}>
+              Candid Cloud
             </Typography>
           </Toolbar>
         </AppBar>

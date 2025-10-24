@@ -53,6 +53,17 @@ const theme = createTheme({
       secondary: 'rgba(255, 255, 255, 0.7)',
     },
   },
+  typography: {
+    fontFamily: '"Source Sans Pro", "Roboto", sans-serif',
+    h6: {
+      fontFamily: '"Roboto", sans-serif',
+      fontWeight: 600,
+    },
+    body2: {
+      fontFamily: '"Source Sans Pro", sans-serif',
+      fontSize: '12pt',
+    },
+  },
   components: {
     MuiCard: {
       styleOverrides: {
@@ -210,21 +221,61 @@ function App() {
               {apps.map((app) => (
                 <Grid item xs={12} sm={6} md={3} key={app.name} className="app-card">
                   <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: app.color, color: 'white', boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)' }}>
-                    <CardContent sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-                      <Box sx={{ mr: 2, fontSize: 40, color: theme.palette.primary.main }}>
-                        {React.cloneElement(app.icon, { fontSize: 'inherit' })}
-                      </Box>
-                      <Box sx={{ flexGrow: 1 }}>
-                        <Typography variant="h6" component="div" gutterBottom>
+                    <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                        <Box sx={{ 
+                          mr: 2, 
+                          p: 1.5, 
+                          borderRadius: '12px',
+                          background: 'rgba(255, 255, 255, 0.1)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.2)',
+                        }}>
+                          {React.cloneElement(app.icon, { 
+                            sx: { fontSize: 32, color: 'white', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }
+                          })}
+                        </Box>
+                        <Typography variant="h6" component="div" sx={{ 
+                          fontWeight: 600,
+                          textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                          lineHeight: 1.2,
+                        }}>
                           {app.name}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {app.description}
-                        </Typography>
                       </Box>
+                      <Typography variant="body2" sx={{ 
+                        opacity: 0.9,
+                        fontSize: '12pt',
+                        textShadow: '0 1px 3px rgba(0,0,0,0.3)',
+                        lineHeight: 1.5,
+                      }}>
+                        {app.description}
+                      </Typography>
                     </CardContent>
-                    <CardActions sx={{ justifyContent: 'flex-end' }}>
-                      <Button size="small" variant="outlined" sx={{ color: 'white', borderColor: 'white' }} onClick={() => handleAppClick(app.url)}>
+                    <CardActions sx={{ p: 2, pt: 0 }}>
+                      <Button 
+                        size="small" 
+                        variant="contained"
+                        fullWidth
+                        onClick={() => handleAppClick(app.url)}
+                        sx={{ 
+                          background: 'rgba(255, 255, 255, 0.2)',
+                          backdropFilter: 'blur(10px)',
+                          border: '1px solid rgba(255, 255, 255, 0.3)',
+                          color: 'white',
+                          fontWeight: 600,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px',
+                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                          '&:hover': {
+                            background: 'rgba(255, 255, 255, 0.3)',
+                            transform: 'translateY(-2px)',
+                            boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                          },
+                        }}
+                      >
                         Launch
                       </Button>
                     </CardActions>

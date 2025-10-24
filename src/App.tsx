@@ -227,7 +227,7 @@ function App() {
             <Grid container spacing={3}>
               {apps.map((app) => (
                 <Grid item xs={12} sm={6} md={3} key={app.name} className="app-card">
-                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: app.color, color: 'white', boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)' }}>
+                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: app.color, color: 'white', boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)', marginRight: '10px' }}>
                     <CardContent sx={{ flexGrow: 1, p: 3 }}>
                       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <Box sx={{ 
@@ -241,7 +241,7 @@ function App() {
                           boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.2)',
                         }}>
                           {React.cloneElement(app.icon, { 
-                            sx: { fontSize: 32, color: 'white', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }
+                            sx: { fontSize: 16, color: 'white', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }
                           })}
                         </Box>
                         <Typography variant="h6" component="div" sx={{ 

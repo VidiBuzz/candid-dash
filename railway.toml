@@ -1,8 +1,3 @@
 [build]
-builder = "NIXPACKS"
-
-[deploy]
-buildCommand = "npm run build"
-
-[services]
-web = { command = "npm start" }
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"

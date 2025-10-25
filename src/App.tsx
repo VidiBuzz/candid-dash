@@ -149,7 +149,7 @@ const apps = [
   {
     name: 'Answer Engine',
     icon: <QuestionAnswerIcon />,
-    url: 'https://payload-production-d7d7.up.railway.app',
+    url: 'https://payload.up.railway.app/',
     description: 'Payload CMS AI-powered answer engine with knowledge base and semantic knowledge graph featuring AI visual RAG search for intelligent queries.',
     color: colors[5],
   },

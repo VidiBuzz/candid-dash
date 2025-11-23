@@ -71,3 +71,14 @@ export default defineConfig([
   },
 ])
 ```
+
+## Troubleshooting
+
+### Server Not Updating?
+If the development server (`npm run dev`) gets stuck and doesn't reflect your latest changes (even after a refresh), you can force a restart without stopping the process:
+
+1. Open `vite.config.ts`
+2. Add or modify a comment (e.g., `// touch`)
+3. Save the file
+
+This triggers Vite's configuration reload, which effectively restarts the server and clears the cache.
